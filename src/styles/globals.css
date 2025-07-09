@@ -3,5 +3,6 @@
 @import "./header.css";
 @import "./page.css";
 @import "./card.css";
+@import "./storybook.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
