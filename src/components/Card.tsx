@@ -9,17 +9,18 @@ export interface CardProps {
 	description: string;
 	/** Option: Link URL */
 	href: string;
-	/** Card type */
-	type?: "vertical" | "horizontal" | "noImage";
+	/** Image position type */
+	imagePosition?: "top" | "left";
 	/** Option: Image */
 	asset?: Asset;
 }
 
 export default function Card(props: CardProps) {
-	const { title, description, href, type, asset } = props;
+	const { title, description, href, imagePosition, asset } = props;
+	const imagePositionClassName = imagePosition || "top";
 
 	return (
-		<div className={`component card ${type}`}>
+		<div className={`component card ${imagePositionClassName}`}>
 			<Link href={href}>
 				{asset && (
 					<Image
@@ -27,12 +28,11 @@ export default function Card(props: CardProps) {
 						alt={asset.alt}
 						width={asset.width}
 						height={asset.height}
-						className="w-full h-48 object-cover"
 					/>
 				)}
-				<div className="p-4">
-					<h3 className="text-xl font-bold mb-2">{title}</h3>
-					<p className="text-gray-700 text-base">{description}</p>
+				<div className="p-4 flex-1">
+					<h3>{title}</h3>
+					<p>{description}</p>
 				</div>
 			</Link>
 		</div>

@@ -1,3 +1,23 @@
 .component.card {
-	@apply bg-white rounded-2xl shadow-md overflow-hidden border;
+	@apply bg-white dark:text-white dark:bg-gray-700 rounded-2xl shadow-md overflow-hidden border dark:border-gray-900;
+}
+
+.component.card h3 {
+	@apply text-xl font-bold mb-2;
+}
+
+.component.card p {
+	@apply text-gray-700 dark:text-gray-300;
+}
+
+.component.card.left a {
+	@apply flex items-center;
+}
+
+.component.card.top a img {
+	@apply w-full h-48 object-cover;
+}
+
+.component.card.left a img {
+	@apply w-48 h-32 object-cover flex-shrink-0;
 }

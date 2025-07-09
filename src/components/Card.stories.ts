@@ -26,6 +26,22 @@ export const Default: Story = {
 	},
 };
 
+export const ImageLeft: Story = {
+	args: {
+		title: "Sample Card with Image on Left",
+		description: "This is a description for the sample card component.",
+		href: "/sample-card",
+		asset: {
+			_id: "sample-image",
+			alt: "Sample Image",
+			url: "/ludemeula-fernandes-9UUoGaaHtNE-unsplash.jpg",
+			height: 1920,
+			width: 1280,
+		},
+		imagePosition: "left",
+	},
+};
+
 export const NoImage: Story = {
 	args: {
 		title: "Card Without Image",
