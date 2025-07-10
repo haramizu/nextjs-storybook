@@ -6,3 +6,7 @@
 @import "./storybook.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+html {
+	@apply bg-white dark:bg-gray-900;
+}
