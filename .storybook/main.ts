@@ -18,5 +18,23 @@ const config: StorybookConfig = {
 		options: {},
 	},
 	staticDirs: ["../public"],
+	viteFinal: async (config) => {
+		// plugin for remove "use client"
+		config.plugins = config.plugins || [];
+		config.plugins.push({
+			name: "remove-use-client",
+			transform(code, id) {
+				if (id.includes("src/components")) {
+					return code.replace(/['"]use client['"];?\s*/g, "");
+				}
+			},
+		});
+
+		config.build = config.build || {};
+		config.build.chunkSizeWarningLimit = 2000;
+
+		return config;
+	},
 };
+
 export default config;
